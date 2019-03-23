@@ -1,0 +1,24 @@
+﻿Host
+URL: https://servopayesh.com:8443
+User: servopayesh.com
+Pass: EwypRPwrj
+
+FTP
+URL: ftp.servopayesh.com
+User: ServoFTP
+Pass: 12345@ABCD
+
+SQL
+ServerName: mssql.servopayesh.com
+User: ServoUser
+Pass: ServoDB@User
+Database: ServoPayesh
+
+Website AdminPanel
+User: AfrashteAdmin
+Pass: 12345a!
+
+e-Mail Account:
+Account: info@servopayesh.com
+User: info
+Pass: infoServo@ccount

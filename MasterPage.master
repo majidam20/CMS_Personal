@@ -1,0 +1,189 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Import Namespace="Business.UI" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <%--<link href="Styles/style.css" rel="stylesheet" type="text/css" />--%>
+    <asp:ContentPlaceHolder ID="head"  runat="server">
+    </asp:ContentPlaceHolder>
+    <%--Google Analytics Start--%>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-3038717-16']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <%--Google Analytics End--%>
+</head>
+<body style="background-position: bottom; margin: 0px; padding: 10px; background-image: url('images/page_bg.jpg');
+    background-repeat: repeat-x;">
+    <form runat="server" style="margin: 0px; padding: 0px">
+    <telerik:RadScriptManager ID="radScript" runat="server"></telerik:RadScriptManager>
+    <style type="text/css">
+        .div_ltr_Normal
+        {
+            background-image:url('images/direction_sefid_ltr.png');
+            border-left:2px solid #959595;
+            background-position: right 5px; background-repeat: no-repeat;
+        }
+        .div_rtl_Normal
+        {
+            background-image:url('images/direction_sefid_rtl.png');
+            border-right:2px solid #959595;
+            background-position: left 5px; background-repeat: no-repeat;
+        }
+        
+        .div_ltr_Normal:hover
+        {
+            background-image:url('images/direction_rangi_ltr.png');
+            border-left:2px solid #959595;
+            background-position: right 5px; background-repeat: no-repeat;
+        }
+        .div_rtl_Normal:hover
+        {
+            background-image:url('images/direction_rangi_rtl.png');
+            border-right:2px solid #959595;
+            background-position: left 5px; background-repeat: no-repeat;
+        }
+        
+        .div_ltr_Sel
+        {
+            background-image:url('images/direction_rangi_ltr.png');
+            background-position: right 5px; background-repeat: no-repeat;
+        }
+        .div_rtl_Sel
+        {
+            background-image:url('images/direction_rangi_rtl.png');
+            background-position: left 5px; background-repeat: no-repeat;
+        }
+    </style>
+    <center>
+        <table cellpadding="0" cellspacing="0" style="width: 778px;">
+            <tr>
+                <td style='background-position: -1px 0px;background-image: url(images/header_<%# CultureResource.ResourceM.GetString("Direction") %>.jpg) ;
+                     height: 358px;' dir='<%# CultureResource.ResourceM.GetString("Direction") %>'>
+                    <table cellpadding="0" cellspacing="0" style="width: 778px; height: 100%;" dir='<%# CultureResource.ResourceM.GetString("Direction") %>'>
+                        <tr >
+                            <td style="padding: 12px 24px 0px 24px; width: 205px; height: 98px;">
+                            </td>
+                            <td dir='<%# CultureResource.ResourceM.GetString("Direction") %>'>
+                            
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" style='text-align:center; dir='<%# CultureResource.ResourceM.GetString("Direction") %>'>
+                                <table cellpadding="0px" cellspacing="0px" style='padding-top: 48px; padding-<%# CultureResource.ResourceM.GetString("AlignN") %>: 13px;
+                                     width:250px; float: <%# CultureResource.ResourceM.GetString("AlignN") %>; text-align: <%# CultureResource.ResourceM.GetString("Align") %>;' dir='<%# CultureResource.ResourceM.GetString("Direction") %>'>
+                                    <tr>
+                                        <td id="cliM_Home" runat="server" class="meNormal">
+                                            <asp:HyperLink ID="hypHome" NavigateUrl='<%#String.Format("~/Default.aspx?lan={0}&t={1}",strLan,CultureResource.ResourceM.GetString("menu_Home")) %>'
+                                                runat="server"><div class='<%# cliM_Home.Attributes["class"] != "meNormal" ? String.Format("div_{0}_Normal div_{0}_Sel", CultureResource.ResourceM.GetString("Direction")) : String.Format("div_{0}_Normal", CultureResource.ResourceM.GetString("Direction")) %>'><%= CultureResource.ResourceM.GetString("menu_Home")%></div></asp:HyperLink>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="cliM_Product" runat="server" class="meNormal">
+                                            <asp:HyperLink ID="hypProduct" NavigateUrl='<%#String.Format("~/Products.aspx?lan={0}&t={1}",strLan,CultureResource.ResourceM.GetString("menu_Product")) %>'
+                                                runat="server"><div class='<%# cliM_Product.Attributes["class"] != "meNormal" ? String.Format("div_{0}_Normal div_{0}_Sel", CultureResource.ResourceM.GetString("Direction")) : String.Format("div_{0}_Normal", CultureResource.ResourceM.GetString("Direction")) %>'><%= CultureResource.ResourceM.GetString("menu_Product")%></div></asp:HyperLink>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="cliM_Images" runat="server" class="meNormal">
+                                            <asp:HyperLink ID="hypImages" NavigateUrl='<%#String.Format("~/Images.aspx?lan={0}&t={1}",strLan,CultureResource.ResourceM.GetString("menu_Images")) %>'
+                                                runat="server"><div class='<%# cliM_Images.Attributes["class"] != "meNormal" ? String.Format("div_{0}_Normal div_{0}_Sel", CultureResource.ResourceM.GetString("Direction")) : String.Format("div_{0}_Normal", CultureResource.ResourceM.GetString("Direction")) %>'><%= CultureResource.ResourceM.GetString("menu_Images")%></div></asp:HyperLink>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="cliM_Videos" runat="server" class="meNormal">
+                                            <asp:HyperLink ID="hypVideos" NavigateUrl='<%#String.Format("~/Videos.aspx?lan={0}&t={1}",strLan,CultureResource.ResourceM.GetString("menu_Videos")) %>'
+                                                runat="server"><div class='<%# cliM_Videos.Attributes["class"] != "meNormal" ? String.Format("div_{0}_Normal div_{0}_Sel", CultureResource.ResourceM.GetString("Direction")) : String.Format("div_{0}_Normal", CultureResource.ResourceM.GetString("Direction")) %>'><%= CultureResource.ResourceM.GetString("menu_Videos")%></div></asp:HyperLink>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="cliM_Catalog" runat="server" class="meNormal">
+                                            <asp:HyperLink ID="hypCatalog" NavigateUrl='<%#String.Format("~/Catalogs.aspx?lan={0}&t={1}",strLan,CultureResource.ResourceM.GetString("menu_Catalog")) %>'
+                                                runat="server"><div class='<%# cliM_Catalog.Attributes["class"] != "meNormal" ? String.Format("div_{0}_Normal div_{0}_Sel", CultureResource.ResourceM.GetString("Direction")) : String.Format("div_{0}_Normal", CultureResource.ResourceM.GetString("Direction")) %>'><%= CultureResource.ResourceM.GetString("menu_Catalog")%></div></asp:HyperLink>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="cliM_Contact" runat="server" class="meNormal">
+                                            <asp:HyperLink ID="hypContact" NavigateUrl='<%#String.Format("~/Contact.aspx?lan={0}&t={1}",strLan,CultureResource.ResourceM.GetString("menu_Contact")) %>'
+                                                runat="server"><div class='<%# cliM_Contact.Attributes["class"] != "meNormal" ? String.Format("div_{0}_Normal div_{0}_Sel", CultureResource.ResourceM.GetString("Direction")) : String.Format("div_{0}_Normal", CultureResource.ResourceM.GetString("Direction")) %>'><%= CultureResource.ResourceM.GetString("menu_Contact")%></div></asp:HyperLink>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="cliM_About" runat="server" class="meNormal">
+                                            <asp:HyperLink ID="hypAbout" NavigateUrl='<%#String.Format("~/About.aspx?lan={0}&t={1}",strLan,CultureResource.ResourceM.GetString("menu_About")) %>'
+                                                runat="server"><div class='<%# cliM_About.Attributes["class"] != "meNormal" ? String.Format("div_{0}_Normal div_{0}_Sel", CultureResource.ResourceM.GetString("Direction")) : String.Format("div_{0}_Normal", CultureResource.ResourceM.GetString("Direction")) %>'><%= CultureResource.ResourceM.GetString("menu_About")%></div></asp:HyperLink>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style="width: 580px;padding-top: 17px;" valign="top" >
+                                <div style="padding-top:10px;width: 80px; height: 22px; margin-top: 145px; padding-right:5px; font-size: 12px; float:<%# CultureResource.ResourceM.GetString("AlignN") %>">
+                                   <a style="width:80px; float:<%# CultureResource.ResourceM.GetString("AlignN") %>; text-align:<%# CultureResource.ResourceM.GetString("Align") %>; border-bottom:1px solid gray; padding: 0px 3px 5px 5px; text-decoration: none; color: Black" href='<%# Business.UI.CultureUI.ChangeCultureLink(Request, "fa") %>'>
+                                        فارسی
+                                        <asp:Image ID="imgFa" Width="18px" runat="server" Style="border: none;" ToolTip='<%# CultureResource.ResourceM.GetString("Company") + " - فارسی"%>'
+                                            ImageUrl="~/Images/IR_Flag.png" />
+                                    </a>
+                                    <a style="width:80px; float:<%# CultureResource.ResourceM.GetString("AlignN") %>; text-align:<%# CultureResource.ResourceM.GetString("Align") %>; border-bottom:1px solid gray; padding:3px 5px 5px 5px; text-decoration: none; color: Black" href='<%# Business.UI.CultureUI.ChangeCultureLink(Request, "en") %>'>
+                                        English
+                                        <asp:Image ID="imgEn" Width="18px" runat="server" Style="border: none;" ToolTip='<%# CultureResource.ResourceM.GetString("Company") + " - English"%>'
+                                            ImageUrl="~/Images/UK_Flag.png" />
+                                    </a>
+                                    <div style="width:80px; padding: 3px 5px 0px 5px; float:<%# CultureResource.ResourceM.GetString("AlignN") %>; <%# CultureResource.ResourceM.GetString("Align") %>;">
+                                        <a style="text-decoration: none; color: Black" href='Login.aspx'>
+                                            <%# CultureResource.ResourceM.GetString("LoginBtn")%>
+                                        </a><a style="text-decoration: none; color: #257a5d;" href='Login.aspx'>
+                                            <asp:Image ID="Image1" Width="15px" runat="server" Style="border: none;" ToolTip='<%# CultureResource.ResourceM.GetString("Company") + " - English"%>'
+                                                ImageUrl="~/images/login.png" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div style='width: 350px; padding:185px 45px 0px 45px; float:<%# CultureResource.ResourceM.GetString("Align") %>;'>
+                                    <asp:ContentPlaceHolder ID="TitleContent" runat="server">
+                                        <p>header</p>
+                                    </asp:ContentPlaceHolder>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        <tr class="left">
+            <td colspan="2" style="background-image: url('images/BodyBorder.png'); padding:0px 12px 0px 9px;" dir='<%# CultureResource.ResourceM.GetString("Direction") %>' align='<%# CultureResource.ResourceM.GetString("Align") %>'>
+                <table cellpadding="0" cellspacing="0" style="width: 100%; height: 100%;">
+                    <tr>
+                        <td valign="top" style="background-position: 3px; width: 229px; background-image: url('images/2pixel_<%# CultureResource.ResourceM.GetString("Direction") %>.jpg' );
+                            background-repeat: repeat-y;" dir='<%# CultureResource.ResourceM.GetString("Direction") %>'>
+                            <asp:ContentPlaceHolder ID="SideContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                        <td dir='<%# CultureResource.ResourceM.GetString("Direction") %>' valign="top">
+                        <asp:ContentPlaceHolder runat="server" ID="MainContent">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="background-image: url('images/FooterBorder.png'); height: 69px;">
+            <center><h5 style=" color:#65542c">Copyright © 2011 building_company.com Inc. All rights reserved.<br />Powered by : besi.ir</h5></center> 
+</td>
+        </tr>
+        </table>
+    </center>
+    </form>
+</body>
+</html>

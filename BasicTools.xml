@@ -1,0 +1,11 @@
+﻿<root>
+	<tools name="Formatting" enabled="true" dockable="true">
+		<tool name="Bold" />
+		<tool name="Italic" />
+		<tool name="Underline" />
+		<tool separator="true"/>
+		<tool name="FontName"/>
+		<tool name="RealFontSize"/>
+	</tools>
+
+</root>

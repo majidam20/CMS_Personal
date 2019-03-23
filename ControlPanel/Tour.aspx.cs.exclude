@@ -1,0 +1,195 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Business.UI;
+
+public partial class ControlPanel_Tour : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Page.Title = string.Format("{0} : پنل مدیریت وبسایت {1}", "مدیریت تور کارخانه", CultureResource.ResourceM.GetString("Company"));
+        if (!Page.IsPostBack)
+        {
+            lblHeader.Text = "مدیریت تور کارخانه";
+            _setTour();
+        }
+        lblDate.Text = Persia.Calendar.ConvertToPersian(DateTime.Now).Simple + "  " + DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
+    }
+
+    private void _fillFields(int ID, string Culture)
+    {
+        if (Culture == "fa-IR")
+        {
+            txtTitle.Text = ((Label)lstTour.Items[EditIndex].FindControl("lblFATitle")).Text;
+            radEdtText.Content = ((Label)lstTour.Items[EditIndex].FindControl("lblFAText")).Text;
+        }
+        else
+        {
+            txtTitle.Text = Business.OtherLanguages.SelectOtherLanguages(Culture, "Products", "Title", ID);
+            radEdtText.Content = Business.OtherLanguages.SelectOtherLanguages(Culture, "Products", "Describ", ID);
+        }
+    }
+
+    private void _setTour()
+    {
+        Business.Products.AllProducts tour = new Business.Products.AllProducts("fa-IR");
+        lstTour.DataSource = tour.ProductData;
+        lstTour.DataBind();
+    }
+
+    protected void drpLang_SelectedIndexChanged(object o, Telerik.Web.UI.RadComboBoxSelectedIndexChangedEventArgs e)
+    {
+        if (EditIndex != -1)
+            _fillFields(Convert.ToInt32(((Label)lstTour.Items[EditIndex].FindControl("lblID")).Text), drpLang.SelectedValue);
+    }
+
+    protected void lstTour_ItemDeleting(object sender, ListViewDeleteEventArgs e)
+    {
+        string strProd = ((Label)lstTour.Items[e.ItemIndex].FindControl("Label3")).Text;
+        try
+        {
+            if (System.IO.File.Exists(Server.MapPath("~/images/Uploads/Tour/") + ((Image)lstTour.Items[e.ItemIndex].FindControl("Image1")).ToolTip))
+                try
+                {
+                    System.IO.File.Delete(Server.MapPath("~/images/Uploads/Tour/") + ((Image)lstTour.Items[e.ItemIndex].FindControl("Image1")).ToolTip);
+                    int intID = Convert.ToInt32(((Label)lstTour.Items[e.ItemIndex].FindControl("lblID")).Text);
+                    Business.Products.AllProducts.DeleteProduct(intID);
+
+                    Business.OtherLanguages.DeleteOtherLanguageData("Products", "Title", intID);
+                    Business.OtherLanguages.DeleteOtherLanguageData("Products", "Describ", intID);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(string.Format("خطا در حذف تصویر\\n {0}", ex.Message));
+                }
+            _setTour();
+            cliMsgBox.alert(string.Format("حذف تصویر '{0}' با موفقیت انجام شد", strProd));
+        }
+        catch (Exception ex)
+        {
+            cliMsgBox.alert(ex.Message);
+        }
+    }
+
+    public static int EditIndex;
+    protected void lstTour_ItemEditing(object sender, ListViewEditEventArgs e)
+    {
+        lstTour.EditIndex = e.NewEditIndex;
+        EditIndex = lstTour.EditIndex;
+        _setTour();
+        drpLang.SelectedIndex = 0;
+        lblFileName.Text = "";
+        _fillFields(Convert.ToInt32(((Label)lstTour.Items[EditIndex].FindControl("lblID")).Text), drpLang.SelectedValue);
+        
+        btnEdit.Visible = true;
+        btnCancel.Visible = true;
+        btnInsert.Visible = false;
+        reqImage.Enabled = false;
+    }
+    
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        btnEdit.Visible = false;
+        btnCancel.Visible = false;
+        btnInsert.Visible = true;
+        reqImage.Enabled = true;
+
+        lstTour.EditIndex = -1;
+        _setTour();
+    }
+
+    protected void btnEdit_Click(object sender, EventArgs e)
+    {
+        if (filupImage.HasFile && drpLang.SelectedValue != "fa-IR")
+        {
+            cliMsgBox.alert("ویرایش فایل بایستی با زبان فارسی انجام شود.\\nزبان فارسی را انتخاب و سپس فایل را انتخاب کنید\\nدرصورتیکه فقط متن را ویرایش می کنید هیچ فایلی را انتخاب نکنید");
+            return;
+        }
+        int intID = Convert.ToInt32(((Label)lstTour.Items[lstTour.EditIndex].FindControl("lblID")).Text);
+        string FileName = filupImage.HasFile ? Business.Controls.CommonMethods.UploadFile(Server.MapPath("~/images/Uploads/Tour/"), filupImage.PostedFile) : ((Image)lstTour.Items[lstTour.EditIndex].FindControl("Image1")).ToolTip;
+        string strTitle = txtTitle.Text;
+        string strText = radEdtText.Content;
+
+        try
+        {
+            if (drpLang.SelectedValue == "fa-IR")
+                Business.Products.AllProducts.UpdateProduct(intID, FileName, strTitle, strTitle, DateTime.Now);
+            else
+            {
+                if (Business.OtherLanguages.SelectOtherLanguages(drpLang.SelectedValue, "Products", "Title", intID) != "")
+                {
+                    Business.OtherLanguages.UpdateOtherLanguage(drpLang.SelectedValue, "Products", "Title", intID, strTitle);
+                    Business.OtherLanguages.UpdateOtherLanguage(drpLang.SelectedValue, "Products", "Describ", intID, strText);
+                }
+                else
+                {
+                    Business.OtherLanguages.InsertOtherLanguageData(drpLang.SelectedValue, "Products", "Title", intID, strTitle);
+                    Business.OtherLanguages.InsertOtherLanguageData(drpLang.SelectedValue, "Products", "Describ", intID, strText);
+                }
+                Business.Products.AllProducts.UpdateProduct(intID, FileName, DateTime.Now);
+            }
+            txtTitle.Text = "";
+            radEdtText.Content = "";
+            lstTour.EditIndex = -1;
+            EditIndex = -1;
+            drpLang.SelectedIndex = 0;
+            _setTour();
+            cliMsgBox.alert("ویرایش تصویر با موفقیت انجام شد");
+            btnEdit.Visible = false;
+            btnCancel.Visible = false;
+            btnInsert.Visible = true;
+            reqImage.Enabled = true;
+        }
+        catch (Exception ex)
+        {
+            cliMsgBox.alert(ex.Message);
+        }
+    }
+    
+    protected void btnInsert_Click(object sender, EventArgs e)
+    {
+        if (drpLang.SelectedValue == "fa-IR")
+        {
+            string FileName = filupImage.HasFile ?
+                Business.Controls.CommonMethods.UploadFile(Server.MapPath("~/images/Uploads/Tour/"), filupImage.PostedFile) :
+                ((Image)lstTour.Items[lstTour.EditIndex].FindControl("Image1")).ToolTip;
+            string strTitle = txtTitle.Text;
+            string strText = radEdtText.Content;
+
+            lblFileName.Text = FileName;
+
+            try
+            {
+                Business.Products.AllProducts.InsertProduct(1, FileName, strTitle, strText, DateTime.Now);
+                txtTitle.Text = "";
+                radEdtText.Content = "";
+                _setTour();
+                lstTour.EditIndex = -1;
+                cliMsgBox.alert(String.Format("درج تصویر در زبان {0} با موفقیت انجام شد.\\n اکنون میتوانید توضیحات تصویر را به زبانهای دیگر وارد کنید.", drpLang.SelectedItem.Text));
+            }
+            catch (Exception ex)
+            {
+                cliMsgBox.alert(ex.Message);
+            }
+        }
+        else if (lblFileName.Text != "")
+        {
+            int intID = Business.Products.AllProducts.ProdudctIdByPhotoName(lblFileName.Text);
+            if (Business.OtherLanguages.SelectOtherLanguages(drpLang.SelectedValue, "Products", "Title", intID) == "")
+            {
+                Business.OtherLanguages.UpdateOtherLanguage(drpLang.SelectedValue, "Products", "Title", intID, txtTitle.Text);
+                Business.OtherLanguages.UpdateOtherLanguage(drpLang.SelectedValue, "Products", "Describ", intID, radEdtText.Content);
+                cliMsgBox.alert(String.Format("درج تصویر در زبان {0} با موفقیت انجام شد.", drpLang.SelectedItem.Text));
+            }
+            else
+            {
+                cliMsgBox.alert(String.Format("قبلاً درج تصویر در زبان {0} باانجام شده است.", drpLang.SelectedItem.Text));
+            }
+        }
+        else
+            cliMsgBox.alert("ابتدا تصویر بایستی به زبان فارسی درج شود");
+    }
+}

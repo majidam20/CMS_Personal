@@ -1,0 +1,46 @@
+
+/* Add to Header in MasterPage*/
+<link href="App_Themes/SteelBlue/SteelBlue.css" rel="stylesheet" type="text/css" />
+
+
+/* Add to Body in MasterPage and insert "ContentPlaceHolder" in the (ww) Tag*/
+	<table id="Template-Table">
+            <tr>
+                <td id="header-left"></td>
+                <td id="header-logo"></td>
+                <td id="header-center" colspan="2"></td>
+                <td id="header-right" style="width: 5px"></td>
+            </tr>
+            <tr>
+                <td id="title-left"></td>
+                <td id="title-center" colspan="3"></td>
+                <td id="title-right" style="width: 5px"></td>
+            </tr>
+            <tr>
+                <td id="sidebar"  colspan="2" rowspan="2">
+                <td id="logincorner"></td>
+                <td id="loginbar"></td>
+               <td id="loginbar-right" style="width: 5px"></td>
+            </tr>  
+            <tr>
+                <td id="ww" colspan="2"> add contentPlaceHolder to Here</td>
+                <td id="sidebar-right" style="width: 5px"></td>
+            </tr>
+            <tr>
+                <td id="status-left"></td>
+                <td id="status-center" colspan="3"></td>
+                <td id="status-right" style="width: 5px"></td>
+            </tr>
+            <tr>
+               <td id="copyright-left"></td>
+               <td id="copyright-center" colspan="3" ></td>
+               <td id="copyright-right" style="width: 5px"></td>
+			</tr>
+	  </table>
+	  
+	  
+	  /*Add to Web.config in appSettings*/
+	      <add key="DefaultThemeName" value="SteelBlue"/>
+
+/* you can also add this attribute to pages in web.config*/
+	- theme="EnterThemeNameHere" -

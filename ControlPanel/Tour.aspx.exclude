@@ -1,0 +1,218 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminCPMaster.master" AutoEventWireup="true" CodeFile="Tour.aspx.cs" Inherits="ControlPanel_Tour" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register TagPrefix="cc1" Namespace="BunnyBear" Assembly="msgBox" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<link rel="stylesheet" type="text/css" href="../CSS/style.css" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntphSideBar" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cphInnerTitle" Runat="Server">
+<div style="float: right; color:White;" class="HeaderTop">
+        <asp:Label ID="lblHeader" runat="server"></asp:Label>
+    </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphMain" Runat="Server">
+<table style="width: 700px;">
+        <tr>
+            <td colspan="2">
+                <div class="HeaderTop" dir="rtl" style="padding:10px 10px 10px 0;">
+                    
+                    برای ویرایش دکمه ویرایش مربوط به هر تصویر را کلیک کنید.<br />
+                    برای افزودن تصویر جدید، از فرم زیر استفاده کنید.</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <img alt="" style="width: 348px; height: 1px; padding: 5px 0 5px 0;" src="Images/line.png" />
+                            <asp:Label ID="lblFileName" runat="server" Text="" Visible="false"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:RequiredFieldValidator ID="reqImage" runat="server" ControlToValidate="filupImage"
+                                ErrorMessage="&lt;strong&gt;تصویر را وارد کنید&lt;/strong&gt;" Text="&lt;strong&gt;تصویر محصول را وارد کنید&lt;/strong&gt;"
+                                ValidationGroup="Fields"></asp:RequiredFieldValidator>
+                            <asp:FileUpload ID="filupImage" runat="server" />
+                        </td>
+                        <td class="Header" style="text-align: left">
+                            تصویر
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <telerik:RadComboBox ID="drpLang" runat="server" AutoPostBack="True" OnSelectedIndexChanged="drpLang_SelectedIndexChanged">
+                                <Items>
+                                    <telerik:RadComboBoxItem runat="server" Text="فارسی"
+                                        Value="fa-IR" />
+                                    <telerik:RadComboBoxItem runat="server" Text="انگلیسی"
+                                        Value="en-US" />
+                                </Items>
+                            </telerik:RadComboBox>
+                        </td>
+                        <td class="Header" style="text-align: left; direction: rtl;">
+                            زبان:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtTitle"
+                                ErrorMessage="&lt;strong&gt;عنوان را وارد کنید&lt;/strong&gt;" Text="&lt;strong&gt;عنوان را وارد کنید&lt;/strong&gt;"
+                                ValidationGroup="Fields"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txtTitle" runat="server" Width="200px"></asp:TextBox>
+                        </td>
+                        <td class="Header" style="text-align: left; direction: rtl;">
+                            عنوان:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <img alt="" style="width: 348px; height: 1px; padding: 5px 0 5px 0;" src="Images/line.png" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="radEdtText"
+                                ErrorMessage="<strong>متن را وارد کنید</strong>" Text="<strong>متن را وارد کنید</strong>"
+                                ValidationGroup="Fields"></asp:RequiredFieldValidator>
+                        </td>
+                        <td class="Header" style="text-align: left; direction: rtl;">
+                            متن:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" colspan="2">
+                            <telerik:RadEditor runat="server" ID="radEdtText" SkinID="DefaultSetOfTools" Width="650px"
+                                EnableResize="false" AllowScripts="True">
+                                <Content>
+                                </Content>
+                                <ImageManager ViewPaths="~/images/Uploads" UploadPaths="~/images/Uploads/Images" DeletePaths="~/images/Uploads/Images" />
+                                <FlashManager ViewPaths="~/images/Uploads" UploadPaths="~/images/Uploads/FLV" DeletePaths="~/images/Uploads/FLV" />
+                                <MediaManager ViewPaths="~/images/Uploads" UploadPaths="~/images/Uploads/Media" DeletePaths="~/images/Uploads/Media" />
+                                <DocumentManager ViewPaths="~/images/Uploads" UploadPaths="~/images/Uploads/Doc" DeletePaths="~/images/Uploads/Doc" />
+                            </telerik:RadEditor>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <img alt="" style="width: 348px; height: 1px; padding: 5px 0 5px 0;" src="Images/line.png" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="padding-right: 10px">
+                            <asp:Label ID="lblDate" runat="server" ForeColor="Red" Text=""></asp:Label>
+                        </td>
+                        <td class="Header" style="text-align: left; direction: rtl;">
+                            تاریخ:</td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2">
+                            <div style="width: 200px;">
+                                <asp:Button Style="float: left;" ID="btnEdit" runat="server" CssClass="submit-login"
+                                    Font-Names="Tahoma" Visible="false" ForeColor="White" ValidationGroup="Fields"
+                                    Text="ویرایش" onclick="btnEdit_Click" />
+                                <asp:Button Style="float: right;" ID="btnCancel" runat="server" CssClass="submit-login"
+                                    Font-Names="Tahoma" Visible="false" ForeColor="White" Text="لغو" ValidationGroup="Fields"
+                                    OnClick="btnCancel_Click" />
+                            </div>
+                            <div style="width: 70px;">
+                                <asp:Button ID="btnInsert" runat="server" CssClass="submit-login" Font-Names="Tahoma"
+                                    ValidationGroup="Fields" ForeColor="White" Text="درج" OnClick="btnInsert_Click" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <img alt="" style="width: 348px; height: 1px; padding: 5px 0 5px 0;" src="Images/line.png" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <asp:ListView ID="lstTour" runat="server" GroupItemCount="3" 
+                    onitemdeleting="lstTour_ItemDeleting" 
+                    onitemediting="lstTour_ItemEditing">
+                <LayoutTemplate>
+                    <table cellspacing="5" runat="server" id="tblTour" width="100%"
+                        style="padding-top: 8px;">
+                        <tr runat="server" id="groupPlaceholder">
+                        </tr>
+                    </table>
+                    <div align="center">
+                        <asp:DataPager runat="server" ID="tourPager" PageSize="9" QueryStringField="pageNo">
+                            <Fields>
+                                <asp:NextPreviousPagerField ButtonType="Image" FirstPageImageUrl="~/images/first.png"
+                                    ShowFirstPageButton="true" PreviousPageImageUrl="~/images/prev.png"
+                                    ShowLastPageButton="false" ShowNextPageButton="false" FirstPageText='ابتدا' PreviousPageText='قبلی'/>
+                                <asp:NumericPagerField ButtonCount="5" NumericButtonCssClass="title" NextPreviousButtonCssClass="title" />
+                                <asp:NextPreviousPagerField ButtonType="Image" ShowLastPageButton="true" ShowNextPageButton="true" LastPageText='انتها'  NextPageText='بعدی'
+                                    ShowPreviousPageButton="false" LastPageImageUrl="~/images/last.png" NextPageImageUrl="~/images/next.png" />
+                            </Fields>
+                        </asp:DataPager>
+                    </div>
+                </LayoutTemplate>
+                <GroupTemplate>
+                    <tr runat="server" id="tourRow" width="100%">
+                        <td runat="server" id="itemPlaceholder" width="100%">
+                        </td>
+                    </tr>
+                </GroupTemplate>
+                <ItemTemplate>
+                    <td valign="top" style="padding-bottom: 15px; border:1px solid orange" align="center">
+                    <table>
+                        <tr>
+                        <td colspan="2">
+                            <asp:Label ID="lblID" runat="server" Visible="false" Text='<%# Eval("ID") %>'></asp:Label>
+                            <a title='<%# Eval("Title") %>' target="_blank" href='<%# string.Format("../ImageHandler.ashx?fileName={0}&size=580&path=~/images/Uploads/Tour/", Eval("FileName")) %>'
+                                rel="lightbox">
+                                <asp:Image ID="Image1" runat="server" ToolTip='<%# Eval("FileName") %>' ImageUrl='<%# string.Format("~/ImageHandler.ashx?fileName={0}&size=180&path=~/images/Uploads/Tour/", Eval("FileName")) %>' />
+                            </a>
+                            <br />
+                            <a class="title" target="_blank" href='<%# string.Format("../ProductDetail.aspx?ProdID={0}&ProdTitle={1}", Eval("ID"), Eval("Title")) %>'>
+                                <asp:Label ID="Label3" colspan="2" runat="server" Text='<%# Eval("Title")%>'></asp:Label></a>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:5px;">
+                                <asp:Button style="font-weight:normal;" CommandName="Edit" ID="btnEdit" runat="server" Text="ویرایش" CssClass="submit-login" />
+                            </td>
+                            <td style="padding-top:5px">
+                                <asp:Button style="font-weight:normal;" CommandName="Delete" ID="btnDelete" runat="server" Text="حذف" CssClass="submit-login" OnClientClick=<%# string.Format("return confirm(\"آیا از حذف تصویر '{0}'  مطمئن هستید؟ \");", Eval("Title")) %> />
+                            </td>
+                        </tr>
+                    </table>
+                    </td>
+                </ItemTemplate>
+                <EditItemTemplate>
+                    <td valign="top" style="padding-bottom: 15px; border:1px solid orange; background-color:#FFFF99;" align="center">
+                    <table>
+                        <tr>
+                        <td colspan="2">
+                            <asp:Label ID="lblID" runat="server" Visible="false" Text='<%# Eval("ID") %>'></asp:Label>
+                            <asp:Label ID="lblFATitle" runat="server" Visible="false" Text='<%# Eval("Title") %>'></asp:Label>
+                            <asp:Label ID="lblFAText" runat="server" Visible="false" Text='<%# Eval("Describe") %>'></asp:Label>
+                            <a title='<%# Eval("Title") %>' target="_blank" href='<%# string.Format("../ImageHandler.ashx?fileName={0}&size=580&path=~/images/Uploads/Tour/", Eval("FileName")) %>'
+                                rel="lightbox">
+                                <asp:Image ID="Image1" runat="server" ToolTip='<%# Eval("FileName") %>' ImageUrl='<%# string.Format("~/ImageHandler.ashx?fileName={0}&size=180&path=~/images/Uploads/Tour/", Eval("FileName")) %>' />
+                            </a>
+                            <br />
+                            <a class="title" target="_blank" href='<%# string.Format("../ProductDetail.aspx?ProdID={0}&ProdTitle={1}", Eval("ID"), Eval("Title")) %>'>
+                                <asp:Label ID="Label3" colspan="2" runat="server" Text='<%# Eval("Title")%>'></asp:Label></a>
+                                <div style="color:Red; text-align:center; width:100%" class="HeaderTop">در حال ویرایش</div>
+                        </td>
+                        </tr>
+                    </table>
+                    </td>
+                </EditItemTemplate>
+            </asp:ListView>
+            </td>
+        </tr>
+        </table>
+        <cc1:msgBox ID="cliMsgBox" Style="z-index: 103; left: 536px; position: absolute;
+        top: 184px" runat="server"></cc1:msgBox>
+</asp:Content>
+

@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="album_name" xml:space="preserve">
+    <value>album name:</value>
+  </data>
+  <data name="Direction" xml:space="preserve">
+    <value>ltr</value>
+  </data>
+  <data name="latest_Comment" xml:space="preserve">
+    <value>Latest Comments</value>
+  </data>
+  <data name="menu_About" xml:space="preserve">
+    <value>About us</value>
+  </data>
+  <data name="menu_Contact" xml:space="preserve">
+    <value>Contact us</value>
+  </data>
+  <data name="menu_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="menu_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="menu_Videos" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="message_sendNazar" xml:space="preserve">
+    <value>thanks.</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Administrator login</value>
+  </data>
+  <data name="lastEdit" xml:space="preserve">
+    <value>Last edit in: &lt;span style="color:orange"&gt;{0}&lt;/span&gt;</value>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="AlignN" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="DirectionN" xml:space="preserve">
+    <value>rtl</value>
+  </data>
+  <data name="CmntArchiv" xml:space="preserve">
+    <value>Comments archive:</value>
+  </data>
+  <data name="CoProd" xml:space="preserve">
+    <value>Company products: </value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>Servo Payesh :: {0}</value>
+  </data>
+  <data name="ShowDetail" xml:space="preserve">
+    <value>Show deatil</value>
+  </data>
+  <data name="ShowProdCat" xml:space="preserve">
+    <value>Show products of this category: </value>
+  </data>
+  <data name="_First" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="_Last" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="_Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="_Prev" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="OrgImage" xml:space="preserve">
+    <value>Show image in original size</value>
+  </data>
+  <data name="Anser2U" xml:space="preserve">
+    <value>Answer will send to your e-Mail address.</value>
+  </data>
+  <data name="C_e_Mail" xml:space="preserve">
+    <value>Enter correct e-Mail. Like: abc@xyz.com</value>
+  </data>
+  <data name="e_Mail" xml:space="preserve">
+    <value>e-Mail: </value>
+  </data>
+  <data name="e_Mail_Err" xml:space="preserve">
+    <value>Enter e-Mail</value>
+  </data>
+  <data name="FillAll" xml:space="preserve">
+    <value>Fill all of fields.</value>
+  </data>
+  <data name="Fullname" xml:space="preserve">
+    <value>Firstname &amp; Family: </value>
+  </data>
+  <data name="Fullname_Err" xml:space="preserve">
+    <value>Enter Firstname &amp; Lastname</value>
+  </data>
+  <data name="PlsWait" xml:space="preserve">
+    <value>Please wait ...</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="SendCmnt" xml:space="preserve">
+    <value>New comment</value>
+  </data>
+  <data name="SentPM" xml:space="preserve">
+    <value>Dear &lt;span&gt;\"{0}\"&lt;/span&gt;, your comment was recived and after administrator accept will be shown.</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Text: </value>
+  </data>
+  <data name="Text_Err" xml:space="preserve">
+    <value>Enter text</value>
+  </data>
+  <data name="YourText" xml:space="preserve">
+    <value>Your text should be at least {0} symbols.</value>
+  </data>
+  <data name="GMapPosition" xml:space="preserve">
+    <value>Our position in the global Google map</value>
+  </data>
+  <data name="ContactErr" xml:space="preserve">
+    <value>Error in reciving contact message. Please try again later.</value>
+  </data>
+  <data name="ContactRec" xml:space="preserve">
+    <value>Dear "&lt;span style="color:red"&gt;{0}&lt;/span&gt;", your message was recived and after review, answer will send to your mail address.</value>
+  </data>
+  <data name="RadCaptErr" xml:space="preserve">
+    <value>&lt;span style="color:red"&gt;The Security Code you entered is not valid&lt;/span&gt;</value>
+  </data>
+  <data name="RadCaptHelp" xml:space="preserve">
+    <value>Type the  Security Code from the image</value>
+  </data>
+  <data name="RadCaptReq" xml:space="preserve">
+    <value>Type the Security Code</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="LoginBtn" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Pass" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="Remember" xml:space="preserve">
+    <value>Remember me next time.</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="Bak2Site" xml:space="preserve">
+    <value>Back to site</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Servo Payesh</value>
+  </data>
+  <data name="TitlePattern" xml:space="preserve">
+    <value>Servo Payesh :: {0}</value>
+  </data>
+  <data name="prdColor" xml:space="preserve">
+    <value>Color scheme:</value>
+  </data>
+  <data name="CmntWrote" xml:space="preserve">
+    <value>{0} wrote:</value>
+  </data>
+  <data name="cmnAdminViewTemp" xml:space="preserve">
+    <value>&lt;table class='ShowTable'&gt;
+           &lt;tr&gt;&lt;td dir="ltr" style='text-align:left;' class='HeaderTop'&gt;
+               &lt;div style='float:left'&gt;{0} Saying:&lt;/div&gt;
+           &lt;/td&gt;&lt;/tr&gt;
+           &lt;tr&gt;
+               &lt;td class='ShowLTR'&gt;
+                   {2}
+               &lt;/td&gt;
+           &lt;/tr&gt;
+           &lt;tr&gt;
+               &lt;td dir='ltr' align='right' class='text' style='border-top-width:1px; border-top-style:solid; border-top-color:Orange; font-size:11px'&gt;
+                   &lt;div style='float:left'&gt;Sent in : {3}&lt;/div&gt;
+                &lt;div style='float:left'&gt;e-Mail: {1}&lt;/div&gt;
+               &lt;/td&gt;
+           &lt;/tr&gt;
+           &lt;/table&gt;</value>
+  </data>
+  <data name="menu_Catalog" xml:space="preserve">
+    <value>Catalog</value>
+  </data>
+  <data name="menu_Images" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="VideoGallery" xml:space="preserve">
+    <value>Video gallery</value>
+  </data>
+  <data name="RadCaptNew" xml:space="preserve">
+    <value>Generate New Image</value>
+  </data>
+  <data name="ProductCats" xml:space="preserve">
+    <value>Product categories</value>
+  </data>
+  <data name="ArticlesCat" xml:space="preserve">
+    <value>Articles category</value>
+  </data>
+</root>

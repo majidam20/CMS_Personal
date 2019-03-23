@@ -1,0 +1,139 @@
+﻿body
+{
+    font-family:Tahoma;
+    font-size:14px;
+}
+.meNormal
+{
+    font-style: normal;
+    background: url('../images/BunNormal.png') no-repeat left bottom;
+    height: 25px;
+    width: 100%;
+    vertical-align:middle;
+    font-family: Tahoma;
+    font-weight:normal;
+    font-size:14px;
+    border-bottom:2px solid #959595;
+    vertical-align:bottom;
+    padding:0px 25px 0px 25px;
+}
+
+.meNormal a
+{
+    text-decoration:none;
+    color:#ffffff;
+    height:20px;
+}
+
+.meNormal a:hover
+{
+    text-decoration:none;
+   color:#e9c379;
+    height:20px;
+}
+
+
+.meNormal a div
+{
+    height:20px;
+    padding:0px 5px 0px 5px;
+    
+}
+
+.direction_img:hover
+{
+    src:url(images/direction_rangi_ltr);
+}
+.meNormal:hover
+{
+    background: url('../images/SelMenuBack.png') no-repeat left;
+    font-family: Tahoma;
+    color:#e9c379;
+    font-size:14px;
+}
+
+.menActive
+{
+    font-family: Tahoma;
+    font-weight:bold;
+    font-size:14px;
+    background: url('../images/SelMenuBack.png') no-repeat left;
+    height: 25px;
+    border-bottom:2px solid #959595;
+    vertical-align:bottom;
+    padding:0px 25px 0px 25px;
+}
+ .menActive a div
+{
+    padding:0px 5px 0px 5px;
+     color:#e9c379;
+}
+.menActive a
+{
+    text-decoration:none;
+    color:#ffffff;
+}
+
+.Title
+{
+    font-family:"B Titr", "2 Titr", Titr, "B Nazanin","2 Nazanin", Nazanin, "B Zar", "2 Zar", Zar, Arial, Tahoma;
+    padding: 0px 15px 0px 15px;
+    color: #be8b06;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.Text
+{
+    font-family:Tahoma,"B Nazanin","2 Nazanin", Nazanin, "B Zar", "2 Zar", Zar, Arial;
+    padding:16px 10px 0px 10px;
+    font-weight:normal;
+    font-size:12px;
+    color:#757575;
+}
+
+a.title
+{
+    font-weight:bold;
+    text-decoration:none;
+    color:#58cdc0;
+}
+a.title:hover
+{
+    font-weight:bold;
+    color:orange;
+    text-decoration:underline;
+}
+
+hr
+{
+   border-color:#c4ae7c;
+   border-bottom-width:.05px;
+}
+
+.MidFrame
+{
+    padding: 43px -0.1px -0.9px 22px; 
+    background-image: url('../Images/pic_frame.png');
+     background-repeat: no-repeat;
+    background-position:center center;
+       
+}
+
+.mainframe
+{
+    width: 480px; height: 250px;
+    padding:10px;
+    background-image: url('../Images/Frame.png');
+    background-repeat: no-repeat;
+}
+
+.pic_frame
+{
+    padding:40px 2px 0px 5px;
+}
+
+.pic_frame_product
+{
+     padding:55px 0px 0px 0px;
+}

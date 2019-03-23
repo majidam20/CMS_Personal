@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="album_name" xml:space="preserve">
+    <value>نام آلبوم:</value>
+  </data>
+  <data name="latest_Comment" xml:space="preserve">
+    <value>آخرین نظرات خوانندگان</value>
+  </data>
+  <data name="menu_About" xml:space="preserve">
+    <value>درباره ما</value>
+  </data>
+  <data name="menu_Contact" xml:space="preserve">
+    <value>تماس با ما</value>
+  </data>
+  <data name="menu_Home" xml:space="preserve">
+    <value>خانه</value>
+  </data>
+  <data name="menu_Product" xml:space="preserve">
+    <value>محصولات</value>
+  </data>
+  <data name="menu_Images" xml:space="preserve">
+    <value>تصاویر</value>
+  </data>
+  <data name="menu_Videos" xml:space="preserve">
+    <value>ویدئو</value>
+  </data>
+  <data name="message_sendNazar" xml:space="preserve">
+    <value>با تشکر. پیام شما با موفقیت ارسال شد</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>ورود مدیریت</value>
+  </data>
+  <data name="lastEdit" xml:space="preserve">
+    <value>آخرین ویرایش در تاریخ: &lt;span style="color:orange"&gt;{0}&lt;/span&gt;</value>
+  </data>
+  <data name="Align" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="AlignN" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="Direction" xml:space="preserve">
+    <value>rtl</value>
+  </data>
+  <data name="DirectionN" xml:space="preserve">
+    <value>ltr</value>
+  </data>
+  <data name="CmntArchiv" xml:space="preserve">
+    <value>آرشیو نظرات: </value>
+  </data>
+  <data name="CoProd" xml:space="preserve">
+    <value>محصولات شرکت: </value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>سروپایش :: {0}</value>
+  </data>
+  <data name="ShowDetail" xml:space="preserve">
+    <value>نمایش جزئیات</value>
+  </data>
+  <data name="ShowProdCat" xml:space="preserve">
+    <value>نمایش محصولات این دسته: </value>
+  </data>
+  <data name="_First" xml:space="preserve">
+    <value>ابتدا</value>
+  </data>
+  <data name="_Last" xml:space="preserve">
+    <value>انتها</value>
+  </data>
+  <data name="_Next" xml:space="preserve">
+    <value>بعدی</value>
+  </data>
+  <data name="_Prev" xml:space="preserve">
+    <value>قبلی</value>
+  </data>
+  <data name="OrgImage" xml:space="preserve">
+    <value>نمایش تصویر در اندازه اصلی</value>
+  </data>
+  <data name="Anser2U" xml:space="preserve">
+    <value>پاسخ به ایمیل شما ارسال خواهد شد.</value>
+  </data>
+  <data name="C_e_Mail" xml:space="preserve">
+    <value>ایمیل را صحیح وارد کنید. شبیه: abc@xyz.com</value>
+  </data>
+  <data name="e_Mail" xml:space="preserve">
+    <value>ایمیل: </value>
+  </data>
+  <data name="e_Mail_Err" xml:space="preserve">
+    <value>ایمیل را وارد کنید</value>
+  </data>
+  <data name="FillAll" xml:space="preserve">
+    <value>همه موارد خواسته شده را تکمیل کنید.</value>
+  </data>
+  <data name="Fullname" xml:space="preserve">
+    <value>نام و نام خانوادگی: </value>
+  </data>
+  <data name="Fullname_Err" xml:space="preserve">
+    <value>نام و نام خانوادگی را وارد کنید</value>
+  </data>
+  <data name="PlsWait" xml:space="preserve">
+    <value>لطفاً صبر کنید ...</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>ارسال</value>
+  </data>
+  <data name="SendCmnt" xml:space="preserve">
+    <value>نظر جدید</value>
+  </data>
+  <data name="SentPM" xml:space="preserve">
+    <value>&lt;span&gt;\"{0}\"&lt;/span&gt; عزیز، نظر شما دریافت گردید و پس از تأیید مدیریت نمایش داده خواهد شد.</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>متن: </value>
+  </data>
+  <data name="Text_Err" xml:space="preserve">
+    <value>متن را وارد کنید</value>
+  </data>
+  <data name="YourText" xml:space="preserve">
+    <value>متن شما حداقل بایستی {0} حرف داشته باشد.</value>
+  </data>
+  <data name="GMapPosition" xml:space="preserve">
+    <value>موقعیت ما در نقشه جهانی گوگل</value>
+  </data>
+  <data name="ContactErr" xml:space="preserve">
+    <value>خطا در دریافت تماس. لطفاً بعداً تلاش نمایید.</value>
+  </data>
+  <data name="ContactRec" xml:space="preserve">
+    <value>"&lt;span style="color:red"&gt;{0}&lt;/span&gt;" عزیز، پیغام شما دریافت شد و پس از بازبینی، پاسخ به آدرس ایمیل شما ارسال می شود</value>
+  </data>
+  <data name="RadCaptErr" xml:space="preserve">
+    <value>&lt;span style="color:red"&gt;کد امنیتی وارد شده اشتباه است&lt;/span&gt;</value>
+  </data>
+  <data name="RadCaptHelp" xml:space="preserve">
+    <value>کد داخل تصویر را تایپ کنید</value>
+  </data>
+  <data name="RadCaptReq" xml:space="preserve">
+    <value>کد امنیتی را تایپ کنید</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>موضوع:</value>
+  </data>
+  <data name="LoginBtn" xml:space="preserve">
+    <value>ورود</value>
+  </data>
+  <data name="Pass" xml:space="preserve">
+    <value>رمز عبور:</value>
+  </data>
+  <data name="Remember" xml:space="preserve">
+    <value>دفعه بعدی مرا به یاد داشته باش.</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>نام کاربری:</value>
+  </data>
+  <data name="Bak2Site" xml:space="preserve">
+    <value>بازگشت به سایت</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>سروپایش</value>
+  </data>
+  <data name="TitlePattern" xml:space="preserve">
+    <value>سروپایش :: {0}</value>
+  </data>
+  <data name="prdColor" xml:space="preserve">
+    <value>رنگبندی:</value>
+  </data>
+  <data name="CmntWrote" xml:space="preserve">
+    <value>{0} نوشته:</value>
+  </data>
+  <data name="cmnAdminViewTemp" xml:space="preserve">
+    <value>&lt;table class='text'&gt;
+        &lt;tr&gt;&lt;td dir='rtl' align='right' class='HeaderTop'&gt;
+            &lt;div style='float:right'&gt;{0} گفته:&lt;/div&gt;
+        &lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class='ShowRTL'&gt;
+                {2}
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td dir='rtl' align='left' class='text' style='border-top-width:1px; border-top-style:solid; border-top-color:Orange; font-size:11px'&gt;
+                &lt;div style='float:left'&gt;ارسال در: {3}&lt;/div&gt;
+                &lt;div style='float:left'&gt;ایمیل: {1}&lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;</value>
+  </data>
+  <data name="menu_Catalog" xml:space="preserve">
+    <value>کاتالوگ</value>
+  </data>
+  <data name="VideoGallery" xml:space="preserve">
+    <value>گالری ویدئو</value>
+  </data>
+  <data name="RadCaptNew" xml:space="preserve">
+    <value>تولید تصویر جدید</value>
+  </data>
+  <data name="ProductCats" xml:space="preserve">
+    <value>دسته بندی محصولات</value>
+  </data>
+  <data name="ArticlesCat" xml:space="preserve">
+    <value>دسته بندی کاتالوگ ها</value>
+  </data>
+</root>

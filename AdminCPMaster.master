@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminCPMaster.master.cs" Inherits="AdminCPMaster" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register TagPrefix="cc1" Namespace="BunnyBear" Assembly="msgBox" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="App_Themes/AdminCP/AdminMaster.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <telerik:RadScriptManager ID="ScriptManager1" runat="server">
+        <Scripts>
+            <%--Needed for JavaScript IntelliSense in VS2010--%>
+            <%--For VS2008 replace RadScriptManager with ScriptManager--%>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />
+        </Scripts>
+    </telerik:RadScriptManager>
+    <div>
+        <table id="Template-Table" align="center">
+            <tr>
+                <td id="header-left">
+                </td>
+                <td id="header-logo">
+                    <div id="header-logo-DIV">
+                    </div>
+                </td>
+                <td id="header-center" colspan="2">
+                    <div style="padding-top: 25px;"><asp:Label runat="server" ID="lblTitle"></asp:Label></div>
+                </td>
+                <td id="header-right" style="width: 5px">
+                </td>
+            </tr>
+            <tr class="titleBar">
+                <td id="title-left">
+                </td>
+                <td id="title-center" colspan="3">
+                    <table width="100%">
+                        <tr>
+                            <td id="title-c-r" dir="rtl">
+                                <div style="float: left;">
+                                    <asp:LinkButton ID="btnSignOut" runat="server" CssClass="titleBar" onclick="btnSignOut_Click" Font-Bold="true" ForeColor="Yellow">خروج</asp:LinkButton>
+                                </div>
+                                <asp:LoginName ID="lgnName" runat="server" CssClass="titleBar" FormatString="{0}گرامی، خوش آمدید" />
+                            </td>
+                            <td dir="rtl">
+                                <asp:HyperLink ID="hyplHome" CssClass="titleBar" NavigateUrl="~/ControlPanel/Default.aspx" runat="server" ForeColor="Yellow">صفحه اصلی</asp:HyperLink>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="title-right" style="width: 5px">
+                </td>
+            </tr>
+            <tr>
+                <td id="sidebar" colspan="2" rowspan="2">
+                    <asp:ContentPlaceHolder ID="cntphSideBar" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td id="logincorner">
+                </td>
+                <td id="loginbar">
+                    <asp:ContentPlaceHolder ID="cphInnerTitle" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td id="loginbar-right">
+                </td>
+            </tr>
+            <tr>
+                <td id="ww" colspan="2">
+                    <asp:ContentPlaceHolder ID="cphMain" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td id="sidebar-right" style="width: 5px">
+                </td>
+            </tr>
+            <tr>
+                <td id="status-left">
+                </td>
+                <td id="status-center" colspan="3">
+                </td>
+                <td id="status-right" style="width: 5px">
+                </td>
+            </tr>
+            <tr>
+                <td id="copyright-left">
+                </td>
+                <td id="copyright-center" colspan="3">
+                </td>
+                <td id="copyright-right" style="width: 5px">
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
